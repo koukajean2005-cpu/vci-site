@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & conseils — VCI Velchim Ivoire</title>
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper-2:#F4F6F4;
+  --ink:#2B2E2C;
+  --ink-soft:#666B67;
+  --line:#E3E7E2;
+  --green:#2F8F5B;
+  --green-deep:#1F6E45;
+  --green-pale:#E5F3EA;
+  --blue:#2E72A6;
+  --blue-deep:#1F5680;
+  --blue-pale:#E7F1F8;
+  --orange:#F2994A;
+  --orange-deep:#DB7F2E;
+  --orange-pale:#FDEEDD;
+  --white:#FFFFFF;
+  --radius:12px;
+  --shadow:0 4px 16px rgba(43,46,44,0.06);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper); color:var(--ink); font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Poppins', -apple-system, sans-serif; font-weight:600; letter-spacing:-0.01em; line-height:1.2;}
+.mono{font-family:'Inter', sans-serif; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+ul{list-style:none;}
+.wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+section{padding:100px 0;}
+@media (max-width:768px){ section{padding:64px 0;} }
+
+/* Header */
+header{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(246,245,240,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.nav{max-width:1180px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;}
+.logo{font-family:'Poppins', sans-serif; font-weight:700; font-size:1.3rem; letter-spacing:-0.01em;}
+.logo span{color:var(--green);}
+.nav-links{display:flex; gap:28px; align-items:center; flex-wrap:wrap;}
+.nav-links a{font-size:0.86rem; color:var(--ink-soft); transition:color .2s;}
+.nav-links a:hover, .nav-links a.active{color:var(--green);}
+.nav-cta{background:var(--orange); color:var(--white); padding:9px 18px; border-radius:var(--radius); font-size:0.83rem; font-weight:600;}
+.nav-toggle{display:none;}
+.nav-links{flex-wrap:wrap; row-gap:10px;}
+@media (max-width:640px){
+  .nav-links{font-size:0.8rem; gap:16px;}
+  .nav-links a{font-size:0.8rem;}
+}
+body{padding-top:64px;}
+
+/* Buttons */
+.btn-primary{display:inline-block; background:var(--orange); color:var(--white); padding:14px 28px; border-radius:var(--radius); font-weight:600; font-size:0.92rem; transition:background .2s, transform .2s; border:none; cursor:pointer; box-shadow:var(--shadow);}
+.btn-primary:hover{background:var(--orange-deep); transform:translateY(-1px);}
+.btn-secondary{display:inline-block; padding:14px 24px; border:1.5px solid var(--green); color:var(--green-deep); border-radius:var(--radius); font-weight:600; font-size:0.92rem;}
+.btn-whatsapp{display:inline-flex; align-items:center; gap:8px; background:#25D366; color:var(--white); padding:14px 24px; border-radius:var(--radius); font-weight:600; font-size:0.92rem; box-shadow:var(--shadow);}
+
+/* Section eyebrow */
+.section-eyebrow{font-family:'Inter', sans-serif; font-weight:700; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--green); margin-bottom:14px; display:block;}
+
+/* Page header (used on interior pages) */
+.page-header{padding:150px 0 60px; border-bottom:1px solid var(--line);}
+.page-header h1{font-size:clamp(2rem,4vw,2.8rem); max-width:22ch;}
+.page-header p{color:var(--ink-soft); max-width:60ch; margin-top:16px; font-size:1.05rem;}
+
+/* Reassurance bar */
+.trustbar{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:40px 0; background:var(--paper-2);}
+.trust-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:20px; text-align:center;}
+@media (max-width:900px){ .trust-grid{grid-template-columns:repeat(2,1fr);} }
+.trust-item{font-size:0.85rem; color:var(--ink-soft);}
+.trust-item strong{display:block; color:var(--green-deep); font-family:'Poppins',sans-serif; font-weight:700; font-size:1.15rem; margin-bottom:4px;}
+
+/* Category cards */
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media (max-width:860px){ .card-grid{grid-template-columns:1fr;} }
+.cat-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:32px; box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s;}
+.cat-card:hover{transform:translateY(-3px); box-shadow:0 8px 24px rgba(43,46,44,0.10);}
+.cat-card .icon{width:44px; height:44px; border-radius:10px; background:var(--green-pale); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-family:'Poppins',sans-serif; font-weight:600; color:var(--green); font-size:1.2rem;}
+.cat-card h3{font-size:1.2rem; margin-bottom:10px;}
+.cat-card p{color:var(--ink-soft); font-size:0.92rem; margin-bottom:16px;}
+.cat-card .lnk{color:var(--blue); font-size:0.85rem; font-weight:500;}
+
+/* Draft badge */
+.badge-draft{display:inline-block; background:var(--orange-pale); color:var(--orange-deep); font-family:'Inter',sans-serif; font-weight:700; font-size:0.65rem; letter-spacing:0.05em; text-transform:uppercase; padding:4px 10px; border-radius:6px; margin-bottom:8px;}
+.badge-real{display:inline-block; background:var(--green-pale); color:var(--green-deep); font-family:'Inter',sans-serif; font-weight:700; font-size:0.65rem; letter-spacing:0.05em; text-transform:uppercase; padding:4px 10px; border-radius:6px; margin-bottom:8px;}
+
+/* Boutique filters */
+.shop-layout{display:grid; grid-template-columns:240px 1fr; gap:48px; align-items:start;}
+@media (max-width:860px){ .shop-layout{grid-template-columns:1fr;} }
+.filters{position:sticky; top:88px; background:var(--white); border:1px solid var(--line); border-radius:10px; padding:24px;}
+.filters h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-soft); margin-bottom:14px;}
+.filter-group{margin-bottom:24px;}
+.filter-group:last-child{margin-bottom:0;}
+.filter-opt{display:flex; align-items:center; gap:8px; font-size:0.9rem; margin-bottom:10px; cursor:pointer;}
+.filter-opt input{accent-color:var(--blue);}
+.searchbox{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:6px; margin-bottom:20px; font-size:0.92rem; background:var(--paper);}
+.searchbox:focus{outline:2px solid var(--blue); outline-offset:1px;}
+
+.product-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:960px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:600px){ .product-grid{grid-template-columns:1fr;} }
+.product-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s; display:flex; flex-direction:column;}
+.product-card:hover{transform:translateY(-3px); box-shadow:0 8px 24px rgba(43,46,44,0.10);}
+.product-card .thumb{aspect-ratio:4/3; border-radius:10px; margin-bottom:16px; background:linear-gradient(150deg, var(--blue) 0%, var(--blue-deep) 100%); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.85); font-family:'Inter',sans-serif; font-weight:600; font-size:0.7rem; letter-spacing:0.08em;}
+.product-card.cosm .thumb{background:linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%);}
+.product-card .pcat{font-family:'Inter',sans-serif; font-weight:600; font-size:0.68rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;}
+.product-card h4{font-family:'Poppins',sans-serif; font-weight:600; font-size:1.08rem; margin-bottom:8px;}
+.product-card p{font-size:0.88rem; color:var(--ink-soft); margin-bottom:16px; flex-grow:1;}
+.product-card .actions{display:flex; gap:10px;}
+.product-card .actions a{font-size:0.82rem; font-weight:500;}
+.product-card .view{color:var(--blue);}
+
+.empty-state{text-align:center; padding:60px 0; color:var(--ink-soft);}
+
+/* Product detail page */
+.pd-layout{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:flex-start;}
+@media (max-width:860px){ .pd-layout{grid-template-columns:1fr;} }
+.pd-gallery{aspect-ratio:1/1; border-radius:12px; background:linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%); position:relative;}
+.pd-gallery.cosm{background:linear-gradient(160deg, var(--green) 0%, #3C5842 100%);}
+.pd-gallery::after{content:"Photo à venir"; position:absolute; bottom:20px; left:20px; color:rgba(255,255,255,0.75); font-family:'Inter',sans-serif; font-weight:600; font-size:0.72rem; letter-spacing:0.06em;}
+.pd-info h1{font-size:clamp(1.8rem,3vw,2.4rem); margin-bottom:12px;}
+.pd-meta{color:var(--ink-soft); font-size:0.95rem; margin-bottom:24px;}
+.pd-desc{font-size:1rem; color:var(--ink-soft); margin-bottom:28px; max-width:52ch;}
+.pd-actions{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;}
+.pd-specs{border-top:1px solid var(--line); padding-top:20px;}
+.pd-specs .row{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--paper-2); font-size:0.9rem;}
+.pd-specs .row span:first-child{color:var(--ink-soft);}
+
+.tabs{margin-top:64px; border-top:1px solid var(--line);}
+.tab-btns{display:flex; gap:0; border-bottom:1px solid var(--line); flex-wrap:wrap;}
+.tab-btn{padding:16px 20px; font-size:0.88rem; color:var(--ink-soft); cursor:pointer; border-bottom:2px solid transparent;}
+.tab-btn.active{color:var(--blue); border-bottom-color:var(--blue);}
+.tab-panel{display:none; padding:28px 0; max-width:68ch; color:var(--ink-soft); font-size:0.95rem;}
+.tab-panel.active{display:block;}
+.tab-panel ul{list-style:disc; padding-left:20px;}
+.tab-panel li{margin-bottom:8px;}
+
+/* Forms */
+.form-box{background:var(--white); border:1px solid var(--line); border-radius:10px; padding:32px;}
+.form-row{margin-bottom:18px;}
+.form-row label{display:block; font-size:0.82rem; color:var(--ink-soft); margin-bottom:7px;}
+.form-row input, .form-row select, .form-row textarea{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:0.92rem; background:var(--paper);}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus{outline:2px solid var(--blue); outline-offset:1px;}
+.form-two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media (max-width:600px){ .form-two{grid-template-columns:1fr;} }
+
+/* Blog */
+.blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media (max-width:860px){ .blog-grid{grid-template-columns:1fr;} }
+.blog-card{background:var(--white); border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+.blog-card .bthumb{aspect-ratio:16/10; background:var(--paper-2);}
+.blog-card .bcontent{padding:20px;}
+.blog-card .mono{margin-bottom:8px;}
+.blog-card h3{font-size:1.05rem; margin-bottom:8px;}
+.blog-card p{font-size:0.88rem; color:var(--ink-soft);}
+
+/* Footer */
+footer{border-top:1px solid var(--line); padding:56px 0 32px; margin-top:60px;}
+.footer-grid{display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; margin-bottom:40px;}
+.footer-brand p{font-size:0.85rem; color:var(--ink-soft); max-width:32ch; margin-top:10px;}
+.footer-col .mono{margin-bottom:14px; display:block;}
+.footer-col a{display:block; font-size:0.88rem; color:var(--ink-soft); margin-bottom:10px;}
+.footer-col a:hover{color:var(--blue);}
+.footer-bottom{border-top:1px solid var(--line); padding-top:24px; display:flex; justify-content:space-between; font-size:0.78rem; color:var(--ink-soft); flex-wrap:wrap; gap:12px;}
+
+/* CTA final block reused across pages */
+.cta-final{background:var(--green-deep); color:var(--white); text-align:center; border-radius:20px; padding:72px 40px;}
+.cta-final h2{color:var(--white); font-size:clamp(1.7rem,3.2vw,2.4rem); max-width:20ch; margin:0 auto 16px;}
+.cta-final p{color:#D7EDE0; max-width:46ch; margin:0 auto 28px;}
+.cta-final .btn-primary{background:var(--orange); color:var(--white);}
+.cta-final .btn-primary:hover{background:var(--orange-deep);}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important;} }
+
+</style>
+</head>
+<body data-active="blog">
+<div id="site-header"></div>
+
+<div class="page-header">
+  <div class="wrap">
+    <span class="section-eyebrow">Blog & conseils</span>
+    <h1>Conseils d'entretien, de beauté et de fabrication</h1>
+    <p>Des articles pratiques sur l'usage de nos produits et les coulisses de la fabrication chimique. [Section en cours de construction]</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="bthumb"></div>
+        <div class="bcontent">
+          <span class="mono">Conseils ménagers</span>
+          <h3>Bien doser l'eau de Javel selon l'usage</h3>
+          <p>Comprendre les degrés chlorométriques pour une désinfection efficace et sans risque. [Article à venir]</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="bthumb"></div>
+        <div class="bcontent">
+          <span class="mono">Fabrication artisanale</span>
+          <h3>La saponification à froid, étape par étape</h3>
+          <p>Ce qui distingue le savon noir VCI d'un savon industriel classique. [Article à venir]</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="bthumb"></div>
+        <div class="bcontent">
+          <span class="mono">Beauté et soins</span>
+          <h3>AHA/BHA : que font vraiment ces actifs ?</h3>
+          <p>Un point simple sur les actifs exfoliants présents dans notre savon noir cosmétique. [Article à venir]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-final">
+      <h2>Une question sur un produit ?</h2>
+      <p>Contactez-nous directement — nous répondons avec des faits, pas du marketing.</p>
+      <a href="contact.html" class="btn-primary">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script>
+// Injecte le header et le footer communs dans chaque page.
+// L'attribut data-active sur <body> détermine le lien actif du menu.
+
+function renderHeader(){
+  const active = document.body.getAttribute('data-active') || '';
+  const link = (href, label, key) => `<a href="${href}" class="${active===key?'active':''}">${label}</a>`;
+  return `
+  <header>
+    <div class="nav">
+      <a href="index.html" class="logo">VCI<span>.</span></a>
+      <nav class="nav-links">
+        ${link('index.html','Accueil','accueil')}
+        ${link('a-propos.html','À propos','apropos')}
+        ${link('boutique.html','Boutique','boutique')}
+        ${link('services.html','Services','services')}
+        ${link('formation.html','Formation','formation')}
+        ${link('revendeurs.html','Revendeurs','revendeurs')}
+        ${link('blog.html','Blog','blog')}
+        ${link('contact.html','Contact','contact')}
+        <a href="contact.html" class="nav-cta">Demander un devis</a>
+      </nav>
+      <a href="contact.html" class="nav-toggle">Devis</a>
+    </div>
+  </header>`;
+}
+
+function renderFooter(){
+  return `
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">VCI<span>.</span></div>
+          <p>Velchim Ivoire — chimie industrielle, détergents et cosmétiques fabriqués à Abidjan depuis 2019. Une entreprise KOJEMICO HOLDING.</p>
+        </div>
+        <div class="footer-col">
+          <span class="mono">Boutique</span>
+          <a href="boutique.html?cat=detergents">Détergents</a>
+          <a href="boutique.html?cat=cosmetiques">Cosmétiques</a>
+          <a href="boutique.html">Tout le catalogue</a>
+        </div>
+        <div class="footer-col">
+          <span class="mono">Entreprise</span>
+          <a href="a-propos.html">À propos</a>
+          <a href="services.html">Nos services</a>
+          <a href="formation.html">Formations</a>
+          <a href="revendeurs.html">Devenir revendeur</a>
+          <a href="blog.html">Blog & conseils</a>
+        </div>
+        <div class="footer-col">
+          <span class="mono">Assistance</span>
+          <a href="contact.html">Contact</a>
+          <a href="contact.html#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <span class="mono">Informations légales</span>
+          <a href="legal.html#mentions">Mentions légales</a>
+          <a href="legal.html#cgv">Conditions générales de vente</a>
+          <a href="legal.html#confidentialite">Politique de confidentialité</a>
+          <a href="legal.html#cookies">Politique de cookies</a>
+          <a href="legal.html#retours">Retours et remboursements</a>
+          <a href="legal.html#livraison">Conditions de livraison</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VCI — Velchim Ivoire. Tous droits réservés.</span>
+        <span>Abidjan, Côte d'Ivoire</span>
+      </div>
+    </div>
+  </footer>`;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const h = document.getElementById('site-header');
+  const f = document.getElementById('site-footer');
+  if(h) h.outerHTML = renderHeader();
+  if(f) f.outerHTML = renderFooter();
+});
+
+</script>
+</body>
+</html>
