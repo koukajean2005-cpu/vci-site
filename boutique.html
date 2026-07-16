@@ -177,9 +177,47 @@ footer{border-top:1px solid var(--line); padding:56px 0 32px; margin-top:60px;}
 @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important;} }
 
 </style>
+<style>body{padding-top:0;}</style>
 </head>
 <body data-active="boutique">
-<div id="site-header"></div>
+<div class="topbar">
+  <div class="wrap topbar-left">
+    <span>📍 Fabrication locale en Côte d'Ivoire</span>
+    <span>🏆 Produits conformes GHS/REACH</span>
+    <span>🚚 Livraison partout en Côte d'Ivoire</span>
+  </div>
+</div>
+<div class="topbar" style="background:var(--navy-deep); padding:0;">
+  <div class="wrap" style="display:flex; justify-content:flex-end; padding:8px 32px;">
+    <div class="topbar-right">
+      <a href="https://wa.me/2250000000000">💬 WhatsApp</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</div>
+
+<header class="shop-header">
+  <div class="nav">
+    <a href="index.html" class="shop-logo">VCI<span>+</span></a>
+    <nav class="nav-links" style="flex:1; justify-content:center; display:flex;">
+      <a href="index.html">Accueil</a>
+      <a href="boutique.html" style="color:var(--red); font-weight:700;">Boutique</a>
+      <a href="formation.html">Formations</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="services.html">Nos services</a>
+      <a href="revendeurs.html">Revendeurs</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="shop-icons">
+      <span class="icn">🔍</span>
+      <span class="icn">👤</span>
+      <span class="icn">🛒<span class="shop-cart-count">0</span></span>
+      <a href="contact.html" class="shop-devis-btn">Demande de devis</a>
+    </div>
+  </div>
+</header>
 
 <div class="page-header" style="padding-bottom:40px;">
   <div class="wrap">
@@ -231,7 +269,45 @@ footer{border-top:1px solid var(--line); padding:56px 0 32px; margin-top:60px;}
   </div>
 </section>
 
-<div id="site-footer"></div>
+<footer class="dk-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="shop-logo" style="color:#fff;">VCI<span style="color:var(--yellow);">+</span></div>
+        <p>Velchim Ivoire — chimie industrielle, détergents et cosmétiques fabriqués à Abidjan depuis 2019. Une entreprise KOJEMICO HOLDING.</p>
+      </div>
+      <div class="footer-col">
+        <span class="mono">Boutique</span>
+        <a href="boutique.html?cat=detergents">Détergents</a>
+        <a href="boutique.html?cat=cosmetiques">Cosmétiques</a>
+        <a href="boutique.html">Tout le catalogue</a>
+      </div>
+      <div class="footer-col">
+        <span class="mono">Entreprise</span>
+        <a href="a-propos.html">À propos</a>
+        <a href="services.html">Nos services</a>
+        <a href="formation.html">Formations</a>
+        <a href="revendeurs.html">Devenir revendeur</a>
+        <a href="blog.html">Blog & conseils</a>
+      </div>
+      <div class="footer-col">
+        <span class="mono">Assistance</span>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <span class="mono">Informations légales</span>
+        <a href="legal.html#mentions">Mentions légales</a>
+        <a href="legal.html#cgv">CGV</a>
+        <a href="legal.html#confidentialite">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VCI — Velchim Ivoire. Tous droits réservés.</span>
+      <span>Abidjan, Côte d'Ivoire</span>
+    </div>
+  </div>
+</footer>
 <script>
 // ============================================================
 // CATALOGUE PRODUITS VCI
@@ -428,87 +504,6 @@ const VCI_PRODUCTS = [
 function getProductById(id){
   return VCI_PRODUCTS.find(p => p.id === id);
 }
-
-</script>
-<script>
-// Injecte le header et le footer communs dans chaque page.
-// L'attribut data-active sur <body> détermine le lien actif du menu.
-
-function renderHeader(){
-  const active = document.body.getAttribute('data-active') || '';
-  const link = (href, label, key) => `<a href="${href}" class="${active===key?'active':''}">${label}</a>`;
-  return `
-  <header>
-    <div class="nav">
-      <a href="index.html" class="logo">VCI<span>.</span></a>
-      <nav class="nav-links">
-        ${link('index.html','Accueil','accueil')}
-        ${link('a-propos.html','À propos','apropos')}
-        ${link('boutique.html','Boutique','boutique')}
-        ${link('services.html','Services','services')}
-        ${link('formation.html','Formation','formation')}
-        ${link('revendeurs.html','Revendeurs','revendeurs')}
-        ${link('blog.html','Blog','blog')}
-        ${link('contact.html','Contact','contact')}
-        <a href="contact.html" class="nav-cta">Demander un devis</a>
-      </nav>
-      <a href="contact.html" class="nav-toggle">Devis</a>
-    </div>
-  </header>`;
-}
-
-function renderFooter(){
-  return `
-  <footer>
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="logo">VCI<span>.</span></div>
-          <p>Velchim Ivoire — chimie industrielle, détergents et cosmétiques fabriqués à Abidjan depuis 2019. Une entreprise KOJEMICO HOLDING.</p>
-        </div>
-        <div class="footer-col">
-          <span class="mono">Boutique</span>
-          <a href="boutique.html?cat=detergents">Détergents</a>
-          <a href="boutique.html?cat=cosmetiques">Cosmétiques</a>
-          <a href="boutique.html">Tout le catalogue</a>
-        </div>
-        <div class="footer-col">
-          <span class="mono">Entreprise</span>
-          <a href="a-propos.html">À propos</a>
-          <a href="services.html">Nos services</a>
-          <a href="formation.html">Formations</a>
-          <a href="revendeurs.html">Devenir revendeur</a>
-          <a href="blog.html">Blog & conseils</a>
-        </div>
-        <div class="footer-col">
-          <span class="mono">Assistance</span>
-          <a href="contact.html">Contact</a>
-          <a href="contact.html#faq">FAQ</a>
-        </div>
-        <div class="footer-col">
-          <span class="mono">Informations légales</span>
-          <a href="legal.html#mentions">Mentions légales</a>
-          <a href="legal.html#cgv">Conditions générales de vente</a>
-          <a href="legal.html#confidentialite">Politique de confidentialité</a>
-          <a href="legal.html#cookies">Politique de cookies</a>
-          <a href="legal.html#retours">Retours et remboursements</a>
-          <a href="legal.html#livraison">Conditions de livraison</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026 VCI — Velchim Ivoire. Tous droits réservés.</span>
-        <span>Abidjan, Côte d'Ivoire</span>
-      </div>
-    </div>
-  </footer>`;
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-  const h = document.getElementById('site-header');
-  const f = document.getElementById('site-footer');
-  if(h) h.outerHTML = renderHeader();
-  if(f) f.outerHTML = renderFooter();
-});
 
 </script>
 <script>
