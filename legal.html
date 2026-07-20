@@ -407,6 +407,28 @@ body{overflow-x:hidden;}
   .footer-brand{padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.10); margin-bottom:8px;}
 }
 
+/* ============================================================
+   CORRECTIF v8 : grilles de cartes forcées en colonnes fixes
+   (le style inline empêchait le responsive de s'appliquer)
+   ============================================================ */
+.card-grid-2col{grid-template-columns:repeat(2,1fr); gap:28px;}
+.card-grid-4col{grid-template-columns:repeat(4,1fr);}
+
+@media (max-width:860px){
+  .card-grid-2col{grid-template-columns:1fr; gap:20px;}
+}
+@media (max-width:900px){
+  .card-grid-4col{grid-template-columns:repeat(2,1fr); gap:16px;}
+}
+@media (max-width:560px){
+  .card-grid-4col{grid-template-columns:1fr;}
+}
+
+/* Sécurité supplémentaire pour le grid produits vedettes sur écrans moyens */
+@media (max-width:900px) and (min-width:641px){
+  #dk-featured{grid-template-columns:1fr 1fr !important;}
+}
+
 </style>
 <style>
   .legal-section{max-width:72ch; margin:0 auto 64px; scroll-margin-top:90px;}

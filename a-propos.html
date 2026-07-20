@@ -407,6 +407,28 @@ body{overflow-x:hidden;}
   .footer-brand{padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.10); margin-bottom:8px;}
 }
 
+/* ============================================================
+   CORRECTIF v8 : grilles de cartes forcées en colonnes fixes
+   (le style inline empêchait le responsive de s'appliquer)
+   ============================================================ */
+.card-grid-2col{grid-template-columns:repeat(2,1fr); gap:28px;}
+.card-grid-4col{grid-template-columns:repeat(4,1fr);}
+
+@media (max-width:860px){
+  .card-grid-2col{grid-template-columns:1fr; gap:20px;}
+}
+@media (max-width:900px){
+  .card-grid-4col{grid-template-columns:repeat(2,1fr); gap:16px;}
+}
+@media (max-width:560px){
+  .card-grid-4col{grid-template-columns:1fr;}
+}
+
+/* Sécurité supplémentaire pour le grid produits vedettes sur écrans moyens */
+@media (max-width:900px) and (min-width:641px){
+  #dk-featured{grid-template-columns:1fr 1fr !important;}
+}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
@@ -501,7 +523,7 @@ body{overflow-x:hidden;}
   <div class="wrap">
     <span class="section-eyebrow">Fabrication & contrôle qualité</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:24px;">Un protocole en quatre étapes</h2>
-    <div class="card-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="card-grid card-grid-4col">
       <div><div class="mono" style="color:var(--blue); margin-bottom:10px;">01</div><h3 style="font-size:1.05rem; margin-bottom:8px;">Formulation</h3><p style="font-size:0.9rem; color:var(--ink-soft);">Validée par notre ingénieur chimiste avant toute production.</p></div>
       <div><div class="mono" style="color:var(--blue); margin-bottom:10px;">02</div><h3 style="font-size:1.05rem; margin-bottom:8px;">Production</h3><p style="font-size:0.9rem; color:var(--ink-soft);">Fabrication à Abidjan, sourcing local.</p></div>
       <div><div class="mono" style="color:var(--blue); margin-bottom:10px;">03</div><h3 style="font-size:1.05rem; margin-bottom:8px;">Contrôle qualité</h3><p style="font-size:0.9rem; color:var(--ink-soft);">Chaque lot vérifié et tracé individuellement.</p></div>
