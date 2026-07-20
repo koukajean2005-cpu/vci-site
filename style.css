@@ -371,3 +371,31 @@ body{overflow-x:hidden;}
   .dk-why h3{font-size:1rem;}
   .dk-why li{font-size:0.82rem;}
 }
+
+/* ============================================================
+   CORRECTIF v7 : sections à propos/contact + titres + footer
+   ============================================================ */
+.dk-founder-split{display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center;}
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+
+@media (max-width:900px){
+  .dk-founder-split{grid-template-columns:1fr; gap:24px;}
+  .dk-founder-split > div:first-child{max-width:220px; margin:0 auto;}
+  .contact-grid{grid-template-columns:1fr; gap:28px;}
+}
+
+/* Réduction générale des gros titres sur mobile */
+@media (max-width:640px){
+  h1{font-size:1.6rem !important; line-height:1.2 !important;}
+  h2{font-size:1.35rem !important;}
+  h3{font-size:1.05rem !important;}
+  .page-header{padding:110px 0 40px;}
+  .page-header p{font-size:0.92rem;}
+}
+
+/* Ajustement du bloc marque dans le footer */
+.footer-brand{max-width:100%;}
+.footer-brand p{max-width:100%; margin-top:12px; line-height:1.6;}
+@media (max-width:960px){
+  .footer-brand{padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.10); margin-bottom:8px;}
+}
