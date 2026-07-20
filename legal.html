@@ -350,6 +350,35 @@ body{overflow-x:hidden;}
   .shop-icons{order:3;}
 }
 
+/* ============================================================
+   CORRECTIF : split Pourquoi/Formations + footer aligné
+   ============================================================ */
+.dk-split{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+
+.dk-formation-item{display:block; text-decoration:none;}
+.dk-formation-item .thumb{width:100%;}
+
+/* Footer en vraie grille alignée */
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr 1fr; gap:28px; align-items:start;}
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr; row-gap:32px;}
+  .footer-brand{grid-column:1/-1;}
+}
+
+@media (max-width:900px){
+  .dk-split{grid-template-columns:1fr; gap:24px;}
+  .dk-why{padding:22px;}
+  .dk-why h3{font-size:1.05rem; margin-bottom:14px;}
+  .dk-why li{font-size:0.85rem; margin-bottom:10px;}
+  .dk-why li .chk{width:16px; height:16px; font-size:0.62rem;}
+}
+
+@media (max-width:640px){
+  .dk-why{padding:18px;}
+  .dk-why h3{font-size:1rem;}
+  .dk-why li{font-size:0.82rem;}
+}
+
 </style>
 <style>
   .legal-section{max-width:72ch; margin:0 auto 64px; scroll-margin-top:90px;}

@@ -351,6 +351,35 @@ body{overflow-x:hidden;}
   .shop-icons{order:3;}
 }
 
+/* ============================================================
+   CORRECTIF : split Pourquoi/Formations + footer aligné
+   ============================================================ */
+.dk-split{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+
+.dk-formation-item{display:block; text-decoration:none;}
+.dk-formation-item .thumb{width:100%;}
+
+/* Footer en vraie grille alignée */
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr 1fr; gap:28px; align-items:start;}
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr; row-gap:32px;}
+  .footer-brand{grid-column:1/-1;}
+}
+
+@media (max-width:900px){
+  .dk-split{grid-template-columns:1fr; gap:24px;}
+  .dk-why{padding:22px;}
+  .dk-why h3{font-size:1.05rem; margin-bottom:14px;}
+  .dk-why li{font-size:0.85rem; margin-bottom:10px;}
+  .dk-why li .chk{width:16px; height:16px; font-size:0.62rem;}
+}
+
+@media (max-width:640px){
+  .dk-why{padding:18px;}
+  .dk-why h3{font-size:1rem;}
+  .dk-why li{font-size:0.82rem;}
+}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
@@ -459,7 +488,7 @@ body{overflow-x:hidden;}
 </section>
 
 <section>
-  <div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+  <div class="wrap dk-split">
     <div class="dk-why">
       <h3>Pourquoi choisir VCI ?</h3>
       <ul>
@@ -474,12 +503,12 @@ body{overflow-x:hidden;}
       <h3 style="font-size:1.1rem; color:var(--navy); margin-bottom:16px;">Nos formations</h3>
       <p style="color:var(--ink-soft); font-size:0.92rem; margin-bottom:20px;">Développez vos compétences et lancez votre propre activité de fabrication.</p>
       <div class="dk-formation-grid">
-        <div class="dk-formation-item"><div class="thumb"></div><span>Savon liquide</span></div>
-        <div class="dk-formation-item"><div class="thumb"></div><span>Lessive liquide</span></div>
-        <div class="dk-formation-item"><div class="thumb"></div><span>Eau de Javel</span></div>
-        <div class="dk-formation-item"><div class="thumb"></div><span>Cosmétique naturel</span></div>
-        <div class="dk-formation-item"><div class="thumb"></div><span>Entrepreneuriat</span></div>
-        <div class="dk-formation-item"><div class="thumb"></div><span>Ateliers</span></div>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Savon liquide</span></a>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Lessive liquide</span></a>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Eau de Javel</span></a>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Cosmétique naturel</span></a>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Entrepreneuriat</span></a>
+        <a href="formation.html" class="dk-formation-item"><div class="thumb"></div><span>Ateliers</span></a>
       </div>
       <a href="formation.html" class="btn-outline-navy" style="margin-top:20px; display:inline-block;">Voir toutes les formations</a>
     </div>
