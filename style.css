@@ -319,3 +319,26 @@ body{overflow-x:hidden;}
   }
   .dk-hero-ctas, .footer-bottom, .cta-final > div{flex-direction:column; align-items:stretch;}
 }
+
+/* ============================================================
+   MENU HAMBURGER MOBILE
+   ============================================================ */
+.menu-toggle{display:none; background:none; border:none; font-size:1.5rem; color:var(--navy); cursor:pointer; padding:4px 8px;}
+.shop-header .nav{position:relative;}
+
+@media (max-width:900px){
+  .menu-toggle{display:block; order:2;}
+  .nav-links{
+    display:none !important;
+    position:absolute; top:100%; left:0; right:0;
+    background:#fff; border:1px solid var(--line); border-top:none;
+    box-shadow:0 12px 20px rgba(0,0,0,0.10);
+    flex-direction:column !important; align-items:flex-start !important;
+    padding:18px 22px; gap:16px !important; z-index:50;
+    overflow-x:visible !important;
+  }
+  .nav-links.open{display:flex !important;}
+  .nav-links a{white-space:normal; font-size:0.95rem !important;}
+  .shop-logo{order:1;}
+  .shop-icons{order:3;}
+}
