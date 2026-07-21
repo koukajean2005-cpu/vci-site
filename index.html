@@ -533,10 +533,7 @@ body{overflow-x:hidden;}
           <a href="https://wa.me/2250777652173" class="btn-whatsapp">💬 WhatsApp</a>
         </div>
       </div>
-      <div class="dk-hero-visual" style="display:flex; align-items:flex-end; justify-content:center; gap:6%; padding:24px 24px 0;">
-        <img src="product-detergent.svg" alt="Détergent Dœktor+" style="height:88%; filter:drop-shadow(0 12px 16px rgba(0,0,0,0.25));">
-        <img src="product-cosmetique.svg" alt="Cosmétique Dœktor+" style="height:74%; filter:drop-shadow(0 12px 16px rgba(0,0,0,0.25));">
-      </div>
+      <div class="dk-hero-visual">Visuel produits — photo à venir</div>
     </div>
   </div>
 </section>
@@ -893,9 +890,9 @@ document.addEventListener('DOMContentLoaded', function(){
     const card = document.createElement('div');
     card.className = 'dk-product';
     card.innerHTML = `
-      <div class="imgzone" style="background:${p.category === 'cosmetiques' ? 'linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%)' : 'linear-gradient(150deg, var(--blue) 0%, var(--blue-deep) 100%)'};">
+      <div class="imgzone">
         <span class="tagpill">${p.status === 'real' ? 'Confirmé' : 'Brouillon'}</span>
-        <img src="${p.category === 'cosmetiques' ? 'product-cosmetique.svg' : 'product-detergent.svg'}" alt="${p.name}" style="width:100%; height:100%; object-fit:contain; padding:12px;">
+        ${p.category === 'cosmetiques' ? 'COSMÉTIQUE' : 'DÉTERGENT'}
       </div>
       <div class="body">
         <h4>${p.name}</h4>

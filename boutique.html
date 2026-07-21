@@ -854,7 +854,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const card = document.createElement('div');
       card.className = 'product-card' + (p.category === 'cosmetiques' ? ' cosm' : '');
       card.innerHTML = `
-        <div class="thumb"><img src="${p.category === 'cosmetiques' ? 'product-cosmetique.svg' : 'product-detergent.svg'}" alt="${p.name}" style="width:100%; height:100%; object-fit:contain; padding:14px; background:${p.category === 'cosmetiques' ? 'linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%)' : 'linear-gradient(150deg, var(--blue) 0%, var(--blue-deep) 100%)'};"></div>
+        <div class="thumb">${p.category === 'cosmetiques' ? 'COSMÉTIQUE' : 'DÉTERGENT'}</div>
         <span class="${p.status === 'real' ? 'badge-real' : 'badge-draft'}">${p.status === 'real' ? 'Fiche confirmée' : 'Brouillon'}</span>
         <div class="pcat">${p.subcategory}</div>
         <h4>${p.name}</h4>
