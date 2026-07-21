@@ -430,3 +430,10 @@ body{overflow-x:hidden;}
   .shop-logo{width:130px !important;}
   .footer-brand .shop-logo{width:150px !important;}
 }
+
+/* ============================================================
+   CORRECTIF v11 : icônes réseaux sociaux dans le bandeau
+   ============================================================ */
+.topbar-right{gap:16px !important; align-items:center;}
+.topbar-right a{opacity:0.85; transition:opacity .2s;}
+.topbar-right a:hover{opacity:1;}
