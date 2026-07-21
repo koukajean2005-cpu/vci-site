@@ -421,3 +421,12 @@ body{overflow-x:hidden;}
 @media (max-width:900px) and (min-width:641px){
   #dk-featured{grid-template-columns:1fr 1fr !important;}
 }
+
+/* ============================================================
+   CORRECTIF v9 : logo SVG responsive
+   ============================================================ */
+.shop-logo svg{width:100%; height:auto; display:block;}
+@media (max-width:640px){
+  .shop-logo{width:130px !important;}
+  .footer-brand .shop-logo{width:150px !important;}
+}

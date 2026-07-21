@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <defs>
+    <linearGradient id="bottleBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2E72A6"/>
+      <stop offset="100%" stop-color="#1B3A6B"/>
+    </linearGradient>
+  </defs>
+  <!-- Bouchon -->
+  <rect x="80" y="10" width="40" height="24" rx="4" fill="#122748"/>
+  <rect x="76" y="30" width="48" height="14" rx="3" fill="#1B3A6B"/>
+  <!-- Corps du flacon -->
+  <path d="M70 44 L130 44 L140 70 L148 220 C148 234 138 244 124 244 L76 244 C62 244 52 234 52 220 L60 70 Z"
+        fill="url(#bottleBlue)"/>
+  <!-- Étiquette -->
+  <rect x="62" y="110" width="76" height="90" rx="6" fill="#FFFFFF"/>
+  <rect x="62" y="110" width="76" height="10" fill="#E63946"/>
+  <text x="100" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="17" fill="#1B3A6B">DŒKTOR</text>
+  <text x="100" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="17" fill="#E63946" dx="38">+</text>
+  <text x="100" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-weight="600" font-size="9" letter-spacing="1" fill="#4A4D52">LESSIVE LIQUIDE</text>
+  <text x="100" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-weight="500" font-size="8" fill="#8A8F94">VCI — ABIDJAN</text>
+  <!-- Reflet -->
+  <path d="M64 60 L72 60 L66 230 L58 230 Z" fill="#FFFFFF" opacity="0.15"/>
+</svg>

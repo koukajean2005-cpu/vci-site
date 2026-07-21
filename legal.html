@@ -429,6 +429,15 @@ body{overflow-x:hidden;}
   #dk-featured{grid-template-columns:1fr 1fr !important;}
 }
 
+/* ============================================================
+   CORRECTIF v9 : logo SVG responsive
+   ============================================================ */
+.shop-logo svg{width:100%; height:auto; display:block;}
+@media (max-width:640px){
+  .shop-logo{width:130px !important;}
+  .footer-brand .shop-logo{width:150px !important;}
+}
+
 </style>
 <style>
   .legal-section{max-width:72ch; margin:0 auto 64px; scroll-margin-top:90px;}
@@ -456,7 +465,7 @@ body{overflow-x:hidden;}
 <div class="topbar" style="background:var(--navy-deep); padding:0;">
   <div class="wrap" style="display:flex; justify-content:flex-end; padding:8px 32px;">
     <div class="topbar-right">
-      <a href="https://wa.me/2250000000000">💬 WhatsApp</a>
+      <a href="https://wa.me/2250777652173">💬 WhatsApp</a>
       <a href="#">Facebook</a>
       <a href="#">Instagram</a>
     </div>
@@ -465,7 +474,34 @@ body{overflow-x:hidden;}
 
 <header class="shop-header">
   <div class="nav">
-    <a href="index.html" class="shop-logo">VCI<span>+</span></a>
+    <a href="index.html" class="shop-logo" style="display:flex; align-items:center;"><span style="width:150px; display:inline-block;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 80" width="230" height="80">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B3A6B"/>
+      <stop offset="100%" stop-color="#122748"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAF1F8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Emblème : bouclier bleu avec goutte blanche, liseré rouge -->
+  <g transform="translate(4,4)">
+    <path d="M34 0 L64 10 L64 34 C64 54 50 66 34 72 C18 66 4 54 4 34 L4 10 Z"
+          fill="url(#shieldGrad)" stroke="#E63946" stroke-width="2.5"/>
+    <path d="M34 16 C34 16 20 34 20 44 C20 52.5 26.3 58 34 58 C41.7 58 48 52.5 48 44 C48 34 34 16 34 16 Z"
+          fill="url(#dropGrad)"/>
+    <circle cx="34" cy="46" r="4.5" fill="#E63946"/>
+  </g>
+
+  <!-- Texte VCI+ -->
+  <text x="80" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#1B3A6B">VCI</text>
+  <text x="152" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#E63946">+</text>
+
+  <!-- Tagline -->
+  <text x="81" y="60" font-family="Arial, sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#4A4D52">VELCHIM IVOIRE</text>
+</svg></span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Accueil</a>
@@ -513,17 +549,18 @@ body{overflow-x:hidden;}
 
     <div id="mentions" class="legal-section">
       <h2>1. Mentions légales</h2>
-      <span class="updated">Dernière mise à jour : à compléter</span>
-      <div class="legal-placeholder">⚠️ Éléments à compléter avec vos informations officielles avant publication : forme juridique, numéro RCCM, numéro de compte contribuable, capital social, nom du responsable de publication.</div>
+      <span class="updated">Dernière mise à jour : juillet 2026</span>
       <h3>Éditeur du site</h3>
-      <p>Le site est édité par VCI (Velchim Ivoire), une entreprise du groupe KOJEMICO HOLDING, dont le siège social est situé à Abidjan, Côte d'Ivoire.</p>
+      <p>Le site est édité par VCI (Velchim Ivoire), une entreprise du groupe KOJEMICO HOLDING, dont le siège social est situé à Treichville, Abidjan, Côte d'Ivoire.</p>
       <ul>
         <li>Raison sociale : VCI — Velchim Ivoire</li>
-        <li>Forme juridique : [à préciser]</li>
-        <li>Numéro RCCM : [à préciser]</li>
-        <li>Siège social : Abidjan, Côte d'Ivoire</li>
-        <li>Responsable de publication : [à préciser]</li>
-        <li>Contact : voir page Contact</li>
+        <li>Numéro RCCM : CI-ABJ-2019-B-12725</li>
+        <li>N° DFE : 1935700E</li>
+        <li>Capital social : 5 000 000 FCFA</li>
+        <li>Siège social : Treichville, rue 12, Abidjan</li>
+        <li>Adresse postale : 18 BP 3451 Abidjan 18</li>
+        <li>Contact : +225 07 77 65 21 73</li>
+        <li>Responsable de publication : Kouka Jean Michel Constant</li>
       </ul>
       <h3>Hébergement</h3>
       <p>Les informations relatives à l'hébergeur du site seront précisées ici une fois l'hébergement définitif choisi.</p>
@@ -578,15 +615,15 @@ body{overflow-x:hidden;}
 
     <div id="retours" class="legal-section">
       <h2>5. Politique de retour et remboursement</h2>
-      <span class="updated">Dernière mise à jour : à compléter</span>
+      <span class="updated">Dernière mise à jour : juillet 2026</span>
       <h3>Conditions de retour</h3>
-      <p>Un produit peut être retourné s'il présente un défaut de conformité ou une non-conformité par rapport à la commande, dans un délai de [à préciser] jours après réception.</p>
+      <p>Un produit peut être retourné s'il présente un défaut de conformité ou une non-conformité par rapport à la commande, dans un délai de 5 jours après réception.</p>
       <h3>Produits non retournables</h3>
       <p>Pour des raisons d'hygiène et de sécurité, les produits cosmétiques descellés ou utilisés ne peuvent pas être repris, sauf défaut avéré.</p>
       <h3>Procédure</h3>
       <p>Toute demande de retour doit être adressée via la page Contact avec le numéro de lot du produit concerné, avant tout renvoi.</p>
       <h3>Remboursement</h3>
-      <p>Après validation de la demande, le remboursement est effectué selon le moyen de paiement initial, dans un délai de [à préciser] jours ouvrés.</p>
+      <p>Après validation de la demande, le remboursement est effectué selon le moyen de paiement initial, dans un délai de 5 jours ouvrés à compter de la validation du retour.</p>
     </div>
 
     <div id="livraison" class="legal-section">
@@ -608,7 +645,24 @@ body{overflow-x:hidden;}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="shop-logo" style="color:#fff;">VCI<span style="color:var(--yellow);">+</span></div>
+        <div class="shop-logo" style="width:170px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 80" width="230" height="80">
+  <defs>
+    <linearGradient id="shieldGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E72A6"/>
+      <stop offset="100%" stop-color="#1B3A6B"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,4)">
+    <path d="M34 0 L64 10 L64 34 C64 54 50 66 34 72 C18 66 4 54 4 34 L4 10 Z"
+          fill="url(#shieldGradW)" stroke="#E63946" stroke-width="2.5"/>
+    <path d="M34 16 C34 16 20 34 20 44 C20 52.5 26.3 58 34 58 C41.7 58 48 52.5 48 44 C48 34 34 16 34 16 Z"
+          fill="#FFFFFF"/>
+    <circle cx="34" cy="46" r="4.5" fill="#E63946"/>
+  </g>
+  <text x="80" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#FFFFFF">VCI</text>
+  <text x="152" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#F2994A">+</text>
+  <text x="81" y="60" font-family="Arial, sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#B9C8DC">VELCHIM IVOIRE</text>
+</svg></div>
         <p>Velchim Ivoire — chimie industrielle, détergents et cosmétiques fabriqués à Abidjan depuis 2019. Une entreprise KOJEMICO HOLDING.</p>
       </div>
       <div class="footer-col">

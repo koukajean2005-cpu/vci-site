@@ -429,6 +429,15 @@ body{overflow-x:hidden;}
   #dk-featured{grid-template-columns:1fr 1fr !important;}
 }
 
+/* ============================================================
+   CORRECTIF v9 : logo SVG responsive
+   ============================================================ */
+.shop-logo svg{width:100%; height:auto; display:block;}
+@media (max-width:640px){
+  .shop-logo{width:130px !important;}
+  .footer-brand .shop-logo{width:150px !important;}
+}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
@@ -443,7 +452,7 @@ body{overflow-x:hidden;}
 <div class="topbar" style="background:var(--navy-deep); padding:0;">
   <div class="wrap" style="display:flex; justify-content:flex-end; padding:8px 32px;">
     <div class="topbar-right">
-      <a href="https://wa.me/2250000000000">💬 WhatsApp</a>
+      <a href="https://wa.me/2250777652173">💬 WhatsApp</a>
       <a href="#">Facebook</a>
       <a href="#">Instagram</a>
     </div>
@@ -452,7 +461,34 @@ body{overflow-x:hidden;}
 
 <header class="shop-header">
   <div class="nav">
-    <a href="index.html" class="shop-logo">VCI<span>+</span></a>
+    <a href="index.html" class="shop-logo" style="display:flex; align-items:center;"><span style="width:150px; display:inline-block;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 80" width="230" height="80">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B3A6B"/>
+      <stop offset="100%" stop-color="#122748"/>
+    </linearGradient>
+    <linearGradient id="dropGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAF1F8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Emblème : bouclier bleu avec goutte blanche, liseré rouge -->
+  <g transform="translate(4,4)">
+    <path d="M34 0 L64 10 L64 34 C64 54 50 66 34 72 C18 66 4 54 4 34 L4 10 Z"
+          fill="url(#shieldGrad)" stroke="#E63946" stroke-width="2.5"/>
+    <path d="M34 16 C34 16 20 34 20 44 C20 52.5 26.3 58 34 58 C41.7 58 48 52.5 48 44 C48 34 34 16 34 16 Z"
+          fill="url(#dropGrad)"/>
+    <circle cx="34" cy="46" r="4.5" fill="#E63946"/>
+  </g>
+
+  <!-- Texte VCI+ -->
+  <text x="80" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#1B3A6B">VCI</text>
+  <text x="152" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#E63946">+</text>
+
+  <!-- Tagline -->
+  <text x="81" y="60" font-family="Arial, sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#4A4D52">VELCHIM IVOIRE</text>
+</svg></span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Accueil</a>
@@ -537,7 +573,24 @@ body{overflow-x:hidden;}
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="shop-logo" style="color:#fff;">VCI<span style="color:var(--yellow);">+</span></div>
+        <div class="shop-logo" style="width:170px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 80" width="230" height="80">
+  <defs>
+    <linearGradient id="shieldGradW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E72A6"/>
+      <stop offset="100%" stop-color="#1B3A6B"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,4)">
+    <path d="M34 0 L64 10 L64 34 C64 54 50 66 34 72 C18 66 4 54 4 34 L4 10 Z"
+          fill="url(#shieldGradW)" stroke="#E63946" stroke-width="2.5"/>
+    <path d="M34 16 C34 16 20 34 20 44 C20 52.5 26.3 58 34 58 C41.7 58 48 52.5 48 44 C48 34 34 16 34 16 Z"
+          fill="#FFFFFF"/>
+    <circle cx="34" cy="46" r="4.5" fill="#E63946"/>
+  </g>
+  <text x="80" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#FFFFFF">VCI</text>
+  <text x="152" y="42" font-family="Poppins, Arial, sans-serif" font-weight="800" font-size="34" fill="#F2994A">+</text>
+  <text x="81" y="60" font-family="Arial, sans-serif" font-weight="600" font-size="10.5" letter-spacing="1.8" fill="#B9C8DC">VELCHIM IVOIRE</text>
+</svg></div>
         <p>Velchim Ivoire — chimie industrielle, détergents et cosmétiques fabriqués à Abidjan depuis 2019. Une entreprise KOJEMICO HOLDING.</p>
       </div>
       <div class="footer-col">
