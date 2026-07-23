@@ -463,6 +463,14 @@ body{overflow-x:hidden;}
   .nav-submenu{position:absolute; top:100%; left:0; background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:12px; min-width:220px; z-index:60; margin-top:10px;}
 }
 
+/* ============================================================
+   CORRECTIF v16 : ancrage propre pour les sections avec id
+   ============================================================ */
+section[id]{scroll-margin-top:160px;}
+@media (max-width:640px){
+  section[id]{scroll-margin-top:120px;}
+}
+
 </style>
 </head>
 <body data-active="formation">
@@ -541,7 +549,17 @@ body{overflow-x:hidden;}
         <a href="formation-certifiant.html" class="sub-active">Programme certifiant</a>
         </div>
       </div>
-      <a href="a-propos.html">À propos</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="a-propos.html" >À propos</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu À propos">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="a-propos.html#histoire">Notre histoire</a>
+        <a href="a-propos.html#valeurs">Mission & valeurs</a>
+        <a href="a-propos.html#fabrication">Fabrication & qualité</a>
+        </div>
+      </div>
       <div class="nav-item-has-sub">
         <div class="nav-item-row">
           <a href="services.html" >Nos services</a>
@@ -556,7 +574,17 @@ body{overflow-x:hidden;}
         <a href="service-accompagnement.html">Accompagnement technique</a>
         </div>
       </div>
-      <a href="revendeurs.html">Revendeurs</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="revendeurs.html" >Revendeurs</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Revendeurs">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="revendeur-devenir.html">Devenir revendeur</a>
+        <a href="revendeur-conditions.html">Conditions de partenariat</a>
+        <a href="revendeur-distribution.html">Distribution en gros</a>
+        </div>
+      </div>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>

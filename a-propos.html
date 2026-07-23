@@ -463,6 +463,14 @@ body{overflow-x:hidden;}
   .nav-submenu{position:absolute; top:100%; left:0; background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:12px; min-width:220px; z-index:60; margin-top:10px;}
 }
 
+/* ============================================================
+   CORRECTIF v16 : ancrage propre pour les sections avec id
+   ============================================================ */
+section[id]{scroll-margin-top:160px;}
+@media (max-width:640px){
+  section[id]{scroll-margin-top:120px;}
+}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
@@ -542,7 +550,17 @@ body{overflow-x:hidden;}
         <a href="formation-certifiant.html">Programme certifiant</a>
         </div>
       </div>
-      <a href="a-propos.html" style="color:var(--red); font-weight:700;">À propos</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="a-propos.html" style="color:var(--red); font-weight:700;">À propos</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu À propos">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="a-propos.html#histoire">Notre histoire</a>
+        <a href="a-propos.html#valeurs">Mission & valeurs</a>
+        <a href="a-propos.html#fabrication">Fabrication & qualité</a>
+        </div>
+      </div>
       <div class="nav-item-has-sub">
         <div class="nav-item-row">
           <a href="services.html" >Nos services</a>
@@ -557,7 +575,17 @@ body{overflow-x:hidden;}
         <a href="service-accompagnement.html">Accompagnement technique</a>
         </div>
       </div>
-      <a href="revendeurs.html">Revendeurs</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="revendeurs.html" >Revendeurs</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Revendeurs">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="revendeur-devenir.html">Devenir revendeur</a>
+        <a href="revendeur-conditions.html">Conditions de partenariat</a>
+        <a href="revendeur-distribution.html">Distribution en gros</a>
+        </div>
+      </div>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -583,7 +611,7 @@ body{overflow-x:hidden;}
   </div>
 </div>
 
-<section>
+<section id="histoire">
   <div class="wrap dk-founder-split">
     <div style="aspect-ratio:4/5; border-radius:10px; background:linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 60%, #0C1B2B 100%); position:relative;">
       <div class="mono" style="position:absolute; bottom:20px; left:20px; color:rgba(255,255,255,0.5);">VCI</div>
@@ -597,7 +625,7 @@ body{overflow-x:hidden;}
   </div>
 </section>
 
-<section style="background:var(--paper-2);">
+<section id="valeurs" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="card-grid">
       <div class="cat-card">
@@ -616,7 +644,7 @@ body{overflow-x:hidden;}
   </div>
 </section>
 
-<section>
+<section id="fabrication">
   <div class="wrap">
     <span class="section-eyebrow">Fabrication & contrôle qualité</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:24px;">Un protocole en quatre étapes</h2>
