@@ -472,6 +472,24 @@ section[id]{scroll-margin-top:160px;}
   section[id]{scroll-margin-top:120px;}
 }
 
+/* ============================================================
+   CORRECTIF v18 : défilement automatique des produits vedettes
+   ============================================================ */
+.dk-marquee-wrap{overflow:hidden; position:relative; -webkit-mask-image:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image:linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);}
+.dk-marquee-track{display:flex; gap:18px; width:max-content; animation:dk-scroll 34s linear infinite;}
+.dk-marquee-track.paused{animation-play-state:paused;}
+.dk-marquee-track .dk-product{width:230px; flex-shrink:0;}
+
+@keyframes dk-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+@media (max-width:640px){
+  .dk-marquee-track .dk-product{width:190px;}
+  .dk-marquee-track{animation-duration:26s;}
+}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
@@ -658,7 +676,9 @@ section[id]{scroll-margin-top:160px;}
       <h2 style="font-size:clamp(1.5rem,3vw,2rem); color:var(--navy);">Produits vedettes</h2>
       <a href="boutique.html" style="color:var(--navy); font-weight:700; font-size:0.9rem;">Voir tout le catalogue →</a>
     </div>
-    <div id="dk-featured" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;"></div>
+    <div class="dk-marquee-wrap">
+      <div id="dk-featured" class="dk-marquee-track"></div>
+    </div>
   </div>
 </section>
 
@@ -1006,9 +1026,10 @@ function getProductById(id){
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const featured = VCI_PRODUCTS.slice(0,4);
-  const grid = document.getElementById('dk-featured');
-  featured.forEach(p => {
+  const featured = VCI_PRODUCTS.slice(0, 8);
+  const track = document.getElementById('dk-featured');
+
+  function renderCard(p){
     const card = document.createElement('div');
     card.className = 'dk-product';
     card.innerHTML = `
@@ -1025,8 +1046,27 @@ document.addEventListener('DOMContentLoaded', function(){
         </div>
       </div>
     `;
-    grid.appendChild(card);
-  });
+    return card;
+  }
+
+  // On duplique la liste pour un défilement en boucle continue et fluide
+  featured.forEach(p => track.appendChild(renderCard(p)));
+  featured.forEach(p => track.appendChild(renderCard(p)));
+
+  // Pause au survol (souris) et au toucher (mobile)
+  let pauseTimeout;
+  function pause(){ track.classList.add('paused'); }
+  function resume(){ track.classList.remove('paused'); }
+
+  track.addEventListener('mouseenter', pause);
+  track.addEventListener('mouseleave', resume);
+  track.addEventListener('touchstart', function(){
+    clearTimeout(pauseTimeout);
+    pause();
+  }, {passive:true});
+  track.addEventListener('touchend', function(){
+    pauseTimeout = setTimeout(resume, 1500);
+  }, {passive:true});
 });
 </script>
 </body>
