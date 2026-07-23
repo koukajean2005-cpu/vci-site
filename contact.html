@@ -489,6 +489,20 @@ section[id]{scroll-margin-top:160px;}
   .dk-marquee-track{animation-duration:26s;}
 }
 
+/* ============================================================
+   CORRECTIF v19 : animation d'entrée des titres/sous-titres
+   ============================================================ */
+@keyframes dkFadeSlideUp{
+  from{opacity:0; transform:translateY(18px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.section-eyebrow{animation:dkFadeSlideUp .5s ease both;}
+.page-header h1,
+.dk-hero h1{animation:dkFadeSlideUp .6s ease both; animation-delay:.08s;}
+.page-header p,
+.dk-hero p{animation:dkFadeSlideUp .6s ease both; animation-delay:.2s;}
+
 </style>
 <style>body{padding-top:0;}</style>
 </head>
