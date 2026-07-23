@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revendeurs & partenaires — VCI Velchim Ivoire</title>
+<title>Programme certifiant — VCI Velchim Ivoire</title>
 <style>
 :root{
   --paper:#FFFFFF;
@@ -464,9 +464,8 @@ body{overflow-x:hidden;}
 }
 
 </style>
-<style>body{padding-top:0;}</style>
 </head>
-<body data-active="revendeurs">
+<body data-active="formation">
 <div class="topbar">
   <div class="wrap topbar-left">
     <span>📍 Fabrication locale en Côte d'Ivoire</span>
@@ -532,14 +531,14 @@ body{overflow-x:hidden;}
       <a href="boutique.html">Boutique</a>
       <div class="nav-item-has-sub">
         <div class="nav-item-row">
-          <a href="formation.html" >Formations</a>
+          <a href="formation.html" style="color:var(--red); font-weight:700;">Formations</a>
           <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Formations">▾</button>
         </div>
         <div class="nav-submenu">
         <a href="formation-detergents.html">Fabrication de détergents</a>
         <a href="formation-cosmetique.html">Cosmétique artisanale</a>
         <a href="formation-ateliers.html">Ateliers pratiques</a>
-        <a href="formation-certifiant.html">Programme certifiant</a>
+        <a href="formation-certifiant.html" class="sub-active">Programme certifiant</a>
         </div>
       </div>
       <a href="a-propos.html">À propos</a>
@@ -557,7 +556,7 @@ body{overflow-x:hidden;}
         <a href="service-accompagnement.html">Accompagnement technique</a>
         </div>
       </div>
-      <a href="revendeurs.html" style="color:var(--red); font-weight:700;">Revendeurs</a>
+      <a href="revendeurs.html">Revendeurs</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -577,62 +576,46 @@ body{overflow-x:hidden;}
 
 <div class="page-header">
   <div class="wrap">
-    <span class="section-eyebrow">Revendeurs & partenaires</span>
-    <h1>Développons votre activité ensemble</h1>
-    <p>Vous souhaitez distribuer nos produits, devenir revendeur ou lancer votre propre marque ? Voici comment nous travaillons avec les professionnels.</p>
+    <span class="section-eyebrow"><a href="formation.html" style="color:var(--green);">Formations</a> / Programme certifiant</span>
+    <h1>Programme certifiant</h1>
+    <p>Un parcours complet pour se professionnaliser dans la fabrication de produits d'entretien ou cosmétiques.</p>
   </div>
 </div>
 
 <section>
-  <div class="wrap">
-    <div class="card-grid">
-      <div class="cat-card">
-        <h3>Devenir revendeur</h3>
-        <p>Accédez à nos tarifs grossistes et distribuez la gamme VCI dans votre réseau — boutique, pharmacie, supermarché, e-commerce.</p>
-      </div>
-      <div class="cat-card">
-        <h3>Conditions de partenariat</h3>
-        <p>Volumes minimums, délais de production et modalités de paiement sont définis ensemble selon votre profil et votre marché.</p>
-      </div>
-      <div class="cat-card">
-        <h3>Distribution en gros</h3>
-        <p>Commandes en volume pour l'hôtellerie, les collectivités, les industriels — avec un interlocuteur technique dédié.</p>
-      </div>
-    </div>
+  <div class="wrap" style="max-width:820px;">
+    
+        <div style="margin-bottom:32px;">
+          <h3 style="font-size:1.1rem; margin-bottom:10px; color:var(--navy);">Ce que vous apprendrez</h3>
+          <p style='color:var(--ink-soft); max-width:64ch;'>Un parcours plus approfondi combinant théorie et pratique : chimie appliquée, formulation, contrôle qualité, réglementation (GHS/REACH), et bases entrepreneuriales pour lancer votre propre activité.</p>
+        </div>
+        <div style="margin-bottom:32px;">
+          <h3 style="font-size:1.1rem; margin-bottom:10px; color:var(--navy);">Programme</h3>
+          <ol style='padding-left:22px; color:var(--ink-soft); margin-top:12px;'><li style='margin-bottom:10px;'>Fondamentaux de chimie appliquée</li><li style='margin-bottom:10px;'>Formulation détergents et/ou cosmétiques</li><li style='margin-bottom:10px;'>Contrôle qualité et conformité réglementaire</li><li style='margin-bottom:10px;'>Bases entrepreneuriales et plan de lancement</li></ol>
+        </div>
+        <div style="margin-bottom:32px;">
+          <h3 style="font-size:1.1rem; margin-bottom:10px; color:var(--navy);">Pour qui</h3>
+          <p style='color:var(--ink-soft); max-width:64ch;'>Personnes souhaitant se professionnaliser sérieusement dans la fabrication de détergents ou cosmétiques, avec un objectif entrepreneurial.</p>
+        </div>
   </div>
 </section>
 
 <section style="background:var(--paper-2);">
   <div class="wrap">
-    <span class="section-eyebrow">Demande de devis</span>
-    <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:24px;">Parlez-nous de votre projet</h2>
-    <div class="form-box" style="max-width:640px;">
-      <form onsubmit="event.preventDefault(); document.getElementById('reseller-success').style.display='block'; this.style.display='none';">
-        <div class="form-two">
-          <div class="form-row"><label for="nom">Nom complet</label><input type="text" id="nom" required></div>
-          <div class="form-row"><label for="entreprise">Entreprise</label><input type="text" id="entreprise"></div>
-        </div>
-        <div class="form-two">
-          <div class="form-row"><label for="email">Email</label><input type="email" id="email" required></div>
-          <div class="form-row"><label for="tel">Téléphone / WhatsApp</label><input type="tel" id="tel"></div>
-        </div>
-        <div class="form-row">
-          <label for="type">Type de demande</label>
-          <select id="type">
-            <option>Devenir revendeur</option>
-            <option>Distribution en gros</option>
-            <option>Marque blanche</option>
-            <option>Fabrication sur mesure</option>
-          </select>
-        </div>
-        <div class="form-row"><label for="msg">Votre projet</label><textarea id="msg" rows="4"></textarea></div>
-        <button type="submit" class="btn-primary" style="width:100%;">Envoyer ma demande</button>
-      </form>
-      <div id="reseller-success" style="display:none; background:var(--green-pale); border:1px solid var(--green); border-radius:10px; padding:28px; text-align:center;">
-        <h3 style="margin-bottom:8px;">Demande envoyée</h3>
-        <p style="color:var(--ink-soft);">Notre équipe revient vers vous rapidement.</p>
+    <div class="cta-final" style="background:var(--navy);">
+      <h2>Intéressé par cette formation ?</h2>
+      <p>Laissez-nous vos coordonnées pour être informé du prochain calendrier de sessions.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn-red">Être informé</a>
+        <a href="https://wa.me/2250777652173" class="btn-outline-navy" style="background:#fff;">💬 WhatsApp</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <a href="formation.html" style="color:var(--navy); font-weight:600; font-size:0.92rem;">← Retour à toutes les formations</a>
   </div>
 </section>
 

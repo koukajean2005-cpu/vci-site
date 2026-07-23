@@ -529,7 +529,18 @@ body{overflow-x:hidden;}
     <nav class="nav-links" id="navLinks">
       <a href="index.html">Accueil</a>
       <a href="boutique.html">Boutique</a>
-      <a href="formation.html">Formations</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="formation.html" >Formations</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Formations">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="formation-detergents.html">Fabrication de détergents</a>
+        <a href="formation-cosmetique.html">Cosmétique artisanale</a>
+        <a href="formation-ateliers.html">Ateliers pratiques</a>
+        <a href="formation-certifiant.html">Programme certifiant</a>
+        </div>
+      </div>
       <a href="a-propos.html">À propos</a>
       <div class="nav-item-has-sub">
         <div class="nav-item-row">
