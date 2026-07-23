@@ -557,7 +557,17 @@ body{overflow-x:hidden;}
         <a href="service-accompagnement.html">Accompagnement technique</a>
         </div>
       </div>
-      <a href="revendeurs.html">Revendeurs</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="revendeurs.html" >Revendeurs</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Revendeurs">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="revendeur-devenir.html">Devenir revendeur</a>
+        <a href="revendeur-conditions.html">Conditions de partenariat</a>
+        <a href="revendeur-distribution.html">Distribution en gros</a>
+        </div>
+      </div>
       <a href="blog.html" style="color:var(--red); font-weight:700;">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>

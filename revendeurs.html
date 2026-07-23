@@ -557,7 +557,17 @@ body{overflow-x:hidden;}
         <a href="service-accompagnement.html">Accompagnement technique</a>
         </div>
       </div>
-      <a href="revendeurs.html" style="color:var(--red); font-weight:700;">Revendeurs</a>
+      <div class="nav-item-has-sub">
+        <div class="nav-item-row">
+          <a href="revendeurs.html" style="color:var(--red); font-weight:700;">Revendeurs</a>
+          <button type="button" class="sub-toggle" onclick="var m=this.parentElement.nextElementSibling; m.classList.toggle('open'); this.classList.toggle('open');" aria-label="Sous-menu Revendeurs">▾</button>
+        </div>
+        <div class="nav-submenu">
+        <a href="revendeur-devenir.html">Devenir revendeur</a>
+        <a href="revendeur-conditions.html">Conditions de partenariat</a>
+        <a href="revendeur-distribution.html">Distribution en gros</a>
+        </div>
+      </div>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -586,23 +596,26 @@ body{overflow-x:hidden;}
 <section>
   <div class="wrap">
     <div class="card-grid">
-      <div class="cat-card">
+      <a href="revendeur-devenir.html" class="cat-card" style="display:block;">
         <h3>Devenir revendeur</h3>
         <p>Accédez à nos tarifs grossistes et distribuez la gamme VCI dans votre réseau — boutique, pharmacie, supermarché, e-commerce.</p>
-      </div>
-      <div class="cat-card">
+        <span class="lnk">En savoir plus →</span>
+      </a>
+      <a href="revendeur-conditions.html" class="cat-card" style="display:block;">
         <h3>Conditions de partenariat</h3>
         <p>Volumes minimums, délais de production et modalités de paiement sont définis ensemble selon votre profil et votre marché.</p>
-      </div>
-      <div class="cat-card">
+        <span class="lnk">En savoir plus →</span>
+      </a>
+      <a href="revendeur-distribution.html" class="cat-card" style="display:block;">
         <h3>Distribution en gros</h3>
         <p>Commandes en volume pour l'hôtellerie, les collectivités, les industriels — avec un interlocuteur technique dédié.</p>
-      </div>
+        <span class="lnk">En savoir plus →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section style="background:var(--paper-2);">
+<section id="form" style="background:var(--paper-2);">
   <div class="wrap">
     <span class="section-eyebrow">Demande de devis</span>
     <h2 style="font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:24px;">Parlez-nous de votre projet</h2>
