@@ -437,3 +437,21 @@ body{overflow-x:hidden;}
 .topbar-right{gap:16px !important; align-items:center;}
 .topbar-right a{opacity:0.85; transition:opacity .2s;}
 .topbar-right a:hover{opacity:1;}
+
+/* ============================================================
+   SOUS-MENU "Nos services"
+   ============================================================ */
+.nav-item-has-sub{width:100%;}
+.nav-item-row{display:flex; align-items:center; gap:8px; width:100%;}
+.sub-toggle{background:none; border:none; color:inherit; font-size:0.75rem; cursor:pointer; padding:4px 6px; transition:transform .2s;}
+.sub-toggle.open{transform:rotate(180deg);}
+.nav-submenu{display:none; flex-direction:column; gap:10px; padding:10px 0 4px 16px; border-left:2px solid var(--line); margin-top:6px;}
+.nav-submenu.open{display:flex;}
+.nav-submenu a{font-size:0.85rem !important; color:var(--ink-soft);}
+.nav-submenu a.sub-active{color:var(--red) !important; font-weight:700;}
+
+@media (min-width:901px){
+  .nav-links{display:flex; flex-direction:row; align-items:center;}
+  .nav-item-has-sub{width:auto; position:relative;}
+  .nav-submenu{position:absolute; top:100%; left:0; background:#fff; border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); padding:12px; min-width:220px; z-index:60; margin-top:10px;}
+}
